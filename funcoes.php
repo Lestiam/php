@@ -32,4 +32,10 @@ function titularComLetrasMaiusculas (array &$conta) //o & informa que eu estou r
     $conta ['titular'] = mb_strtoupper($conta ['titular']); //pega o nome do titular e passa esse nome para letras maiusculas
 }
 
+function exibeConta (array $conta) //recebe um array de uma conta
+{
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular. Saldo: $saldo</li>"; //monta um html contendo um item de lista, informando um titular e uma conta
+}
+
 ?>

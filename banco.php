@@ -40,13 +40,10 @@ unset($contasCorrentes['454.654.578-92']); //remove da memoria as informações de
 
 titularComLetrasMaiusculas($contasCorrentes['123.456.789-10']);
 
-
+echo "<ul>"; //inicia uma lista em HTML
 foreach ($contasCorrentes as $cpf => $conta) { //$cpf => $conta é o mesmo que dizer: indice => valor. Ou seja, no foreach, o indice não é definido
     ['titular' => $titular, 'saldo' => $saldo] = $conta; //estou passando meu indice titular pra uma variavel titular e meu indice saldo para uma variavel chamada saldo e armazenando ambos na variavel conta, tudo dentro do list []
-    exibeMensagem(
-        //"$cpf {$conta['titular']} {$conta['saldo']}" //em uma string, eu posso concatenar desta forma com chaves
-        "$cpf $titular $saldo"
-        //"$cpf $conta[titular] $conta[saldo]" //ou desta forma, apenas tirando as aspas simples dos colchetes e sem chaves
-    );//aqui eu imprimo o indice
+    exibeConta($conta);
 }
+echo "</ul>"; //fecha a lista em html
 ?>
